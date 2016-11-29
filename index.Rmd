@@ -1,5 +1,32 @@
 ---
-title: "Jongyoon's Website"
+title: "Overview"
 ---
 
-Hello, Website!
+#**The Establishment of Law as a Social Norm in China**
+##**Reasons behind choosing litigation as a conflict resoultion method**
+
+###**Research Question**
+In People's Republic of China (PRC), after witnessing the turmoil derived from the rule of man, post-Mao elites took a step toward legal reforms. In 1982, the PRC constitution stipulated that 'no organization or individual may enjoy the privilege of being above the Constitution and the law'.  Furthermore, in the mid-90's, the Chinese Communist Party (CCP) officially endorsed the concept of rule of law: rule the country in accordance with law, establish a socialist rule of law state.  In 2016, it has been over 30 years since the PRC declared the legal reform. The growing level of litigation seems to imply that law has become established as a social norm, and there are some important roles that law plays in this country.
+
+However, although the total number of cases is growing each year, the regional discrepancies in the number of cases vary among different provinces. As can be seen from the Figure 1, not only the absolute number of cases but also the yearly rate of change in litigation varies among different provinces.  Under the same constitution, and the same declaration of the rule of law, why is it that in some places people are more willing to litigate than the others? In the existing studies, this phenomenon has been mostly explained by the different amount of demands for law among different provinces. Nevertheless, the establishment of the rule of law can also be understood as the central government's strategy for regime stability maintenance. In other words, the regional variance in the degree of the settlement of the legal culture can be understood from a political perspective.
+
+```{r download, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(forcats)
+library(feather)
+
+litigation_china <- read_csv("data.csv") %>%
+  tbl_df()
+```
+
+```{r graph, echo=FALSE}
+
+ggplot(data = litigation_china) +
+  geom_line(mapping = aes(x = year, y = cases, group = province, colour = province)) +
+  ggtitle("Figure1. Regional differences in the number of litigatation cases") +
+  scale_y_continuous(labels = scales::comma)
+```
+
+
