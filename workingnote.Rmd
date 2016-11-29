@@ -1,0 +1,13 @@
+---
+title: "workingnote"
+author: "Jongyoon"
+date: "November 28, 2016"
+output: html_document
+---
+Here I used
+1) data importing
+2) merging two different data set
+3) making a graph
+4) visualizing data on a map
+5) inserting footnotes
+6) making links
