@@ -1,11 +1,15 @@
 ---
 title: "Data Analysis"
 ---
-```{r analysis, include=TRUE}
+
+###Result Tables
+
+```{r analysis, include=FALSE}
 library(plm)
 library(dplyr)
 library(readr)
 library(ggplot2)
+library(texreg)
 
 litigation_china <- read_csv("data.csv") %>%
   tbl_df()
@@ -13,28 +17,47 @@ location_china <- read_csv("location.csv") %>%
   tbl_df()
 
 lm1 <- plm(cases ~ population + GRP, data = litigation_china, index = c('province', 'year'), model = "within")
-summary(lm1)
 
 lm2 <- plm(cases ~ population + education, data = litigation_china, index = c('province', 'year'), model = "within")
-summary(lm2)
 
 lm3 <- plm(cases ~ population + GRP + education, data = litigation_china, index = c('province', 'year'), model = "within")
-summary(lm3)
+```
+
+```{r results, echo=FALSE, results='asis'}
+htmlreg(l = list(lm1, lm2, lm3), mfrow = TRUE)
 ```
 
 Among three different models, I think the third model is the most appropriate one for the purpose of this project - comparing the effects of the two independent variables. The first and the second models do not have enough information since the effect of either the GRP or the education was absorbed by the effect of the number of population.
 According to the results of the third analysis, when population was controlled, both the GRP and the education level appear to have statistically significant impacts on the frequency of litigation, with 99.9% of the confidence level. With every 100 million yuan increase in GRP, about 8.6 more cases are expected to increase. Yet, when it comes to the education level, the direction is the opposite to the hypothesis: with every 10 student enrollments decrease, about 4 more cases are expected to increase.
 **Thus, it would be difficult to accept the second hypothsis, whereas the first hypothesis appears to be persuasive.**
 
+##Result Explanation
+Why is that economic factor affect the choice of litigation, whereas education does not? Here I suggest some explanations about such a result.
+
 ##Limitation
 As can be seen from the graphs below, the relations between population and cases, between education and cases are not straightly linear, although the general trends show that the larger the value X is, the more the cases there are. Thus, I am worried if a linear regression model is not the best option for this research.
-```{r limit, include=TRUE}
-ggplot(data = litigation_china) +
-  geom_smooth(mapping = aes(x = population, y = cases))
+```{r limit, include=FALSE}
+g1 <- ggplot(data = litigation_china) +
+  geom_smooth(mapping = aes(x = population, y = cases)) +
+  ggtitle("Relationship between population and the number of cases") +
+  xlab("Population") +
+  ylab("Cases")
 
-ggplot(data = litigation_china) +
-  geom_smooth(mapping = aes(x = GRP, y = cases))
+g2 <- ggplot(data = litigation_china) +
+  geom_smooth(mapping = aes(x = GRP, y = cases)) +
+  ggtitle("Relationship between GRP and the number of cases") +
+  xlab("GRP") +
+  ylab("Cases")
 
-ggplot(data = litigation_china) +
-  geom_smooth(mapping = aes(x = education, y = cases))
+g3 <-ggplot(data = litigation_china) +
+  geom_smooth(mapping = aes(x = education, y = cases)) +
+  ggtitle("Relationship between education and the number of cases") +
+  xlab("Education") +
+  ylab("Cases")
+```
+
+```{r limit result, echo=FALSE}
+g1
+g2
+g3
 ```
