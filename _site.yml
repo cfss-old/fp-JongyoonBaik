@@ -1,4 +1,5 @@
 name: "JongyoonBaik"
+output_dir: "."
 navbar:
   title: "Jongyoon's Website"
   left:
@@ -6,6 +7,10 @@ navbar:
       href: index.html
     - text: "Explore Data"
       href: data.html
+    - text: "Results"
+      href: results.Rmd
+    - text: "Working Note"
+      href: workingnote.Rmd
 output:
   html_document:
     theme: cosmo

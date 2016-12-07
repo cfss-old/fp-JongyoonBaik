@@ -1,13 +1,85 @@
 ---
-title: "workingnote"
-author: "Jongyoon"
-date: "November 28, 2016"
-output: html_document
+title: "Working Note"
 ---
-Here I used
+#Here I used
 1) data importing
 2) merging two different data set
 3) making a graph
 4) visualizing data on a map
 5) inserting footnotes
 6) making links
+
+#Bibliography
+Cai, Yongshun, 2010, Collective Resistance in China: Why Popular Protests Succeed or Fail, 
+Stanford: Stanford University Press.
+
+Chen, Feng and Xin Xu, 2012, "Active Judiciary: Judicial Dismantling of Workers' Collective 
+Action in China", The China Journal, no. 67.
+
+He, Xin, 2009, "Court Finance and Court Responses to Judicial Reforms: A Tale of Two Chinese 
+Courts", Law & Policy, vol. 31, issue 4.
+
+Hu, Jieren and Lingjian Zeng, 2014, "Grand Mediation and Legitimacy Enhancement in 
+Contemporary China - the Guang'an model", Journal of Contemporary China, vol. 24, 
+no. 91.
+
+Lubman, Stanley B., 1999, Bird in a Cage: Legal Reform in China after Mao, Stanford: Stanford 
+University Press.
+
+Michelson, Ethan and Benjamin L. Read, 2007, "Public Attitudes toward Official Justice in 
+Beijing and Rural China", in Margaret Woo and Mary Gallagher, Chinese Justice: Civil 
+Dispute Resolution in Contemporary China, Cambridge: Cambridge University Press.
+
+Minzner, Carl F., 2006, "Xinfang: Alternative to Formal Chinese Legal Institutions", Stanford 
+Journal of International Law, vol.42.
+
+O'Brien, Kevin and Lianjiang Li, 2006, Rightful Resistance in Rural China, Cambridge: 
+Cambridge University Press.
+
+-------------------------, 2004, "Suing the Local State: Administrative Litigation in 
+Rural China", The China Journal, no.51.
+
+Peerenboom, Randall, 2011, "Economic Development and the Development of the Legal 
+Profession in China", in Woo, Margaret Y.K. and Marry E. Gallagher (eds.), Chinese 
+Justice: Civil Dispute Resolution in Contemporary China, Cambridge: Cambridge 
+University Press.
+
+-------------------------, 2002, China's Long March toward Rule of Law, Cambridge: Cambridge 
+University Press.
+
+Su, Yang and Xin He, 2010, "Street as Courtroom: State Accommodation of Labor Protest in 
+South China", Law and Society Review, vol. 44, issue 1.
+
+Tong, Yanqi, 2009, "Dispute Resolution Strategies in a Hybrid System", The China Review, 
+vol.9, no.1.
+
+Tong, Yanqi and Shaohua Lei, 2013, Social Protest in Contemporary China, 2003-2010: 
+Transitional Pains and Regime Legitimacy, Abingdon: Routledge.
+
+Wang, Yuhua, 2005, Tying the Autocrat's Hands: The Rise of the Rule of Law in China, 
+Cambridge: Cambridge University Press.
+
+Yang, Dali L., 2016, “China’s Troubled Quest for Order: Leadership, Organization and the 
+Contradictions of the Stability Maintenance Regime”, Journal of Contemporary China, 
+vol.25, issue 102.
+
+Zhang, Zonglin, 2014, Xinfang yu Fazhi [Xinfang and the rule of law], Beijing: Renmin 
+Chubanshe.
+
+Zhu, Jingwen, 2007, Zhongguo Falvfazhan Baogao [Report on China's Legal development], 
+Beijing: Zhongguo Renmendaxue Chubanshe.
+
+Asian Wall Street Journal, "China's Spiraling Unrest", December 14, 2005., 
+(http://www.wsj.com/articles/SB113450766490021545)
+"Society for Anglo-Chinese Understanding" (http://www.sacu.org/provmap.html).
+
+Constitution of the People's Republic of China.
+
+Zhongguo Falv Nianjian [Law Yearbook of China], Beijing: Zhongguo Falv Nianjianshe.
+
+Zhongguo Shangwang, “2014 Quanguo Xinfang Xitong Huajielv da 83% Xinfang Jizhi Zhineng 
+reng cun Kunhuo” [The Resolution Rate of 2014 National Xinfang Reached 83%. The 
+function of the Xinfang system is still confused.], Feb 16, 2015.
+
+Zhongguo Tongji Nianjian [China Statistical Yearbook], Beijing: Zhongguo Tongji Chubanshe.
+
