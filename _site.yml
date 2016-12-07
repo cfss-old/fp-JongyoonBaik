@@ -3,14 +3,10 @@ output_dir: "."
 navbar:
   title: "Jongyoon's Website"
   left:
-    - text: "Home"
+    - text: "Introduction"
       href: index.html
     - text: "Explore Data"
       href: data.html
-    - text: "Data Analysis"
-      href: .R
-    - text: "Conclusion"
-      href: 
     - text: "Working Note"
       href: workingnote.html
 output:

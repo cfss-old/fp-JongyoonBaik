@@ -2,11 +2,19 @@
 title: "Explore Data"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r, include = FALSE}
+library(shiny)
+library(shinythemes)
+library(readr)
+library(dplyr)
 
+knitr::opts_chunk$set(echo = FALSE)
 ```
+
 
 ```{r}
-knitr::include_app("http://https://jongyoonbaik.shinyapps.io/hw10/", height = 400)
+knitr::include_app("https://jongyoonbaik.shinyapps.io/hw10/", height = 400)
+# knitr::include_app("http://127.0.0.1:3203/", height = 400)
 ```
+
+  
