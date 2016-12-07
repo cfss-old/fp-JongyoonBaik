@@ -1,5 +1,4 @@
 name: "JongyoonBaik"
-output_dir: "."
 navbar:
   title: "Jongyoon's Website"
   left:
@@ -7,8 +6,6 @@ navbar:
       href: index.html
     - text: "Explore Data"
       href: data.html
-    - text: "Working Note"
-      href: workingnote.html
 output:
   html_document:
     theme: cosmo

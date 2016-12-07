@@ -7,3 +7,4 @@ for(path in paths){
 
 source("tidy_graph.R")
 rmarkdown::render("index.Rmd", output_dir = "output")
+rmarkdown::render("data.Rmd", output_dir = "output")
