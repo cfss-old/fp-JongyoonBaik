@@ -1,4 +1,12 @@
 ---
-title: "Data analysis"
+title: "Explore Data"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{r}
+knitr::include_app("http://https://jongyoonbaik.shinyapps.io/hw10/", height = 400)
+```

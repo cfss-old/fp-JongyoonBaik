@@ -5,8 +5,14 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Explore Data"
+      href: data.html
+    - text: "Data Analysis"
+      href: .R
+    - text: "Conclusion"
+      href: 
+    - text: "Working Note"
+      href: workingnote.html
 output:
   html_document:
     theme: cosmo
