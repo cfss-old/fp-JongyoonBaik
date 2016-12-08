@@ -1,8 +1,14 @@
 ---
 title: "Data Analysis"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
-###Result Tables
+***
+
+##Result Table
 
 ```{r analysis, include=FALSE}
 library(plm)
@@ -16,31 +22,37 @@ litigation_china <- read_csv("data.csv") %>%
 location_china <- read_csv("location.csv") %>%
   tbl_df()
 
-lm1 <- plm(cases ~ population + GRP, data = litigation_china, index = c('province', 'year'), model = "within")
+lm1 <- plm(cases ~  GRP + population, data = litigation_china, index = c('province', 'year'), model = "within")
 
-lm2 <- plm(cases ~ population + education, data = litigation_china, index = c('province', 'year'), model = "within")
+lm2 <- plm(cases ~ education + population, data = litigation_china, index = c('province', 'year'), model = "within")
 
-lm3 <- plm(cases ~ population + GRP + education, data = litigation_china, index = c('province', 'year'), model = "within")
+lm3 <- plm(cases ~ GRP + education + population, data = litigation_china, index = c('province', 'year'), model = "within")
 ```
 
 ```{r results, echo=FALSE, results='asis'}
 htmlreg(l = list(lm1, lm2, lm3), mfrow = TRUE)
 ```
 
-Among three different models, I think the third model is the most appropriate one for the purpose of this project - comparing the effects of the two independent variables. The first and the second models do not have enough information since the effect of either the GRP or the education was absorbed by the effect of the number of population.
+Among the three different models, I think the third model is the most appropriate one for the purpose of this project - comparing the effects of the two independent variables. The first and the second models do not have enough information since the effect of either the GRP or the education was absorbed by the effect of the number of population.
 
-According to the results of the third analysis, when population was controlled, both the GRP and the education level appear to have statistically significant impacts on the frequency of litigation, with 99.9% of the confidence level. With every 100 million yuan increase in GRP, about 8.6 more cases are expected to increase. Yet, when it comes to the education level, the direction is the opposite to the hypothesis: with every 10 student enrollments decrease, about 4 more cases are expected to increase.
+According to the results of the third analysis, when population was controlled, both the GRP and the education level appear to have statistically significant impacts on the frequency of litigation, with 99% of the confidence level. With every 100 million yuan increase in GRP, about 8.6 more cases are expected to increase. Yet, when it comes to the education level, the direction is the opposite to the hypothesis: with every 10 student enrollments decrease, about 4 more cases are expected to increase.
 **Thus, it would be difficult to accept the second hypothsis, whereas the first hypothesis appears to be persuasive.**
+
+***
 
 ##Result Explanation
 Why is that economic factor affect the choice of litigation, whereas education does not? When it comes to the economic factor, as mentioned in the 'hypotheses'part, it does affect the choice for litigation because with more economic transaction, people need transparent rules and regulations more frequently. In addition, since laws regarding economic exchanges are better established than administrative/civil laws in China, Chinese people would have felt law as an effecient conflict-resolution tool for economic conflicts.
 
 When it comes to the education, although it is appropriate to argue that education lets people to know their legal rights, people tend to choose another conflict resolution method to realize their legal rights - popular protest. Popular protest is at the opposite end of the spectrum to litigation in that it is illegal, mostly violent, and often said to be regime-threatening way of resolving conflict, whereas litigation is legal and procedural, and contributes to social stability. Thus, the level of education cannot explain why litigation is chosen *over* other methods.
 
+***
 
 ##Limitation
 As can be seen from the graphs below, the relations between population and cases, between education and cases are not straightly linear, although the general trends show that the larger the value X is, the more the cases there are. Thus, I am worried if a linear regression model is not the best option for this research.
 ```{r limit, include=FALSE}
+library(ggplot2)
+library(gridExtra)
+
 g1 <- ggplot(data = litigation_china) +
   geom_smooth(mapping = aes(x = population, y = cases)) +
   ggtitle("Relationship between population and the number of cases") +
@@ -61,7 +73,8 @@ g3 <-ggplot(data = litigation_china) +
 ```
 
 ```{r limit result, echo=FALSE}
-g1
-g2
-g3
+grid.arrange(g1, g2, g3, ncol = 1)
+#combined graphs since they take too much space
 ```
+
+---

@@ -1,16 +1,26 @@
 ---
-title: "Overview"
+title: "Introduction"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+***
 
 #**The Establishment of Law as a Social Norm in China**
-## - Reasons behind choosing litigation as a conflict resoultion method
+## Reasons behind choosing litigation as a conflict resoultion method
 
-###*Research Question*
+***
+
+##*Research Question*
+
 In People's Republic of China (PRC), after witnessing the turmoil derived from the rule of man, post-Mao elites took a step toward legal reforms. In 1982, the PRC constitution stipulated that 'no organization or individual may enjoy the privilege of being above the Constitution and the law'.^[Constitution of the People's Republic of China (1982), Article 5.]  Furthermore, in the mid-90's, the Chinese Communist Party (CCP) officially endorsed the concept of rule of law: rule the country in accordance with law, establish a socialist rule of law state.^[Randall Peerenboom, *China's Long March toward Rule of Law*, (Cambridge: Cambridge University Press, 2002), p. 58.] In 2016, it has been over 30 years since the PRC declared the legal reform. The growing level of litigation seems to imply that law has become established as a social norm, and there are some important roles that law plays in this country.^[*Zhongguo Tongji Nianjian* [China Statistical Yearbook], (Beijing: Zhongguo Tongji Chubanshe).]
 
-However, although the total number of cases is growing each year, the regional discrepancies in the number of cases vary among different provinces. As can be seen from the Figure 1 and Figure 2, not only the absolute number of cases but also the yearly rate of change in litigation varies among different provinces.^[Figure1 and 2 both from *Zhongguo Falv Nianjian* [Law Yearbook of China], (Beijing: Zhongguo Falv Nianjianshe). Provinces are selected based on the availability of the data, and their geographical locations.] Under the same constitution, and the same declaration of the rule of law, **why is it that in some places people are more willing to litigate than the others?** In the existing studies, this phenomenon has been mostly explained by the different amount of demands for law among different provinces.
-
-###In this project, I will test the existing study's hypotheses using panel data analysis.
+However, although the total number of cases is growing each year, the regional discrepancies in the number of cases vary among different provinces. As can be seen from the Figure 1 and Figure 2, not only the absolute number of cases but also the yearly rate of change in litigation varies among different provinces.^[Figure1 and 2 both from *Zhongguo Falv Nianjian* [Law Yearbook of China], (Beijing: Zhongguo Falv Nianjianshe). Provinces are selected based on the availability of the data, and their geographical locations.] Under the same constitution, and the same declaration of the rule of law, <span style="color:red">why is it that in some places people are more willing to litigate than the others?</span> In the existing studies, this phenomenon has been mostly explained by the different amount of demands for law among different provinces. **In this project, I will test the existing study's hypotheses using panel data analysis.**
 
 ```{r download, include=FALSE}
 library(tidyverse)
@@ -28,7 +38,7 @@ location_china <- read_csv("location.csv") %>%
 ```{r graph, include = FALSE}
 graph1 <- ggplot(data = litigation_china) +
   geom_line(mapping = aes(x = year, y = cases, group = province, colour = province)) +
-  ggtitle("Figure1. Regional differences in the number of litigatation cases") +
+  ggtitle("Figure1. Number of Cases per Year by Province") +
   scale_y_continuous(labels = scales::comma)
 ```
 
@@ -61,7 +71,7 @@ map1 <- china_map +
              aes(x = lon, y = lat, size = average_litigation),
              alpha = 1,
              color = "red") +
-  ggtitle("Figure2. Average Number of Cases per Year") +
+  ggtitle("Figure2. Regional differences in the average number of litigatation cases") +
   xlab("Longitude") +
   ylab("Latitude") +
   theme(legend.position = "none")
@@ -76,19 +86,24 @@ graph1
 map2
 ```
 
-###*Legal Reform in China*
+---
+
+##*Legal Reform in China*
 China's legal reform has been done in three aspects: legislation, institution building, and legal dissemination. The first step for the legal reform started with passing laws. Between 1976 and 1998, the National People's Congress (NPC) and its Standing Committee passed more than 337 laws, making a strike contrast to 134 laws, within which 23 were remain valid, passed between 1949 and 1978.^[Peerenboom, op.cit., p.6.] The most exemplary legislations include Administration Litigation Act in 1989, Labor Law in 1994, and the Labor Union Act in 2002. Other than providing laws necessary for the society, the Ministry of Justice was re-established in 1979 and law schools were re-opened. In addition, since law is a relatively new concept for the Chinese people, efforts are being made to publicize laws, such as broadcasting programs on case-discussion.^[Ibid., p.7.]
 
-One of the most important goals of such a series of legal reform is to establish law as the criteria for justice in everyday life. Before the legal reform, there was no objective criteria for judging what is right and what is wrong, so people relied on the rule of man. Needless to say that during Mao's period people suffered from arbitrary party rules accusing them of being reactionary without concrete basis. Other than this extreme example, letters and visits (*xinfang*) has been adopted as a major conflict resolution method for Chinese people since 1951, and it relies on the local governmental official's personal judgements and arbitrations about certain case.^[Zonglin Zhang, Xinfang yu Fazhi [Xinfang and the rule of law], (Beijing: Renmin Chubanshe, 2014).p.13.; Carl F. Minzner,"Xinfang: Alternative to Formal Chinese Legal Institutions", *Stanford Journal of International Law*, vol.42, 2006, p.6.] Although these days xinfang is less being used by Chinese people, another serious alternative has appeared - popular protests.^[“2014 Quanguo Xinfang Xitong Huajielv da 83% Xinfang Jizhi Zhineng reng cun Kunhuo” [The Resolution Rate of 2014 National Xinfang Reached 83%. The function of the Xinfang system is still confused.], *Zhongguo Shangwang*, Feb 16, 2015.] Popular protests are being held mainly because there are no appropriate laws protecting, for example, laborers or residents from the high-handedness of companies or from the local governments.
+One of the most important goals of such a series of legal reform is to establish law as the criteria for justice in everyday life. Before the legal reform, there was no objective criteria for judging what is right and what is wrong, so people relied on the rule of man. Needless to say that during Mao's period people suffered from arbitrary party rules accusing them of being reactionary without concrete basis. Other than this extreme example, letters and visits (*xinfang*) has been adopted as a major conflict resolution method for Chinese people since 1951, and it relies on the local governmental official's personal judgements and arbitrations about certain case.^[Zonglin Zhang, Xinfang yu Fazhi [Xinfang and the rule of law], (Beijing: Renmin Chubanshe, 2014).p.13.; Carl F. Minzner,"Xinfang: Alternative to Formal Chinese Legal Institutions", *Stanford Journal of International Law*, vol.42, 2006, p.6.] Although these days xinfang is less being used by Chinese people, another serious alternative has appeared - popular protests.^["2014 Quanguo Xinfang Xitong Huajielv da 83% Xinfang Jizhi Zhineng reng cun Kunhuo" [The Resolution Rate of 2014 National Xinfang Reached 83%. The function of the Xinfang system is still confused.], *Zhongguo Shangwang*, Feb 16, 2015.] Popular protests are being held mainly because there are no appropriate laws protecting, for example, laborers or residents from the high-handedness of companies or from the local governments.
 	
-Under such a circumstance, establishing law and order will be beneficial for the central government for three reasons. First, since Deng Xiaoping, Chinese elites started to recognize the limitations of arbitrary and forceful methods employed throughout Mao's period in governing the society, and to find kinder and gentler systems for maintaining order more efficient and desirable.^[Dali L. Yang, “China’s Troubled Quest for Order: Leadership, Organization and the Contradictions of the Stability Maintenance Regime”, *Journal of Contemporary China*, 25(102), (September 2016), p.4.] Establishing law and order suits well to the changed strategy. Second, in order for the economic reform to be successful, China had to accelerate economic activities by providing objective procedures and regulations in economic transactions. In addition, in order to facilitate foreign investments, China's legal system had to satisfy the global standard.^[Yuhua Wang, *Tying the Autocrat's Hands: The Rise of the Rule of Law in China*, (Cambridge: Cambridge University Press, 2015); Peerenboom op.cit., pp.430-445.] Last, popular protests are becoming regime threatening because it is mostly against the governments, violent, and growing in frequency and in the number of participants.^[Asian Wall Street Journal, "China's Spiraling Unrest", December 14, 2005.,([http://www.wsj.com/articles/SB113450766490021545](http://www.wsj.com/articles/SB113450766490021545)); Yanqi Tong and Shaohua Lei, *Social Protest in Contemporary China, 2003-2010: Transitional Pains and Regime Legitimacy*, (Abingdon:  Routledge, 2013).] In order to undercut the popular protests, turning them into regularized litigation will be necessary. 
+Under such a circumstance, establishing law and order will be beneficial for the central government for three reasons. First, since Deng Xiaoping, Chinese elites started to recognize the limitations of arbitrary and forceful methods employed throughout Mao's period in governing the society, and to find kinder and gentler systems for maintaining order more efficient and desirable.^[Dali L. Yang, "China’s Troubled Quest for Order: Leadership, Organization and the Contradictions of the Stability Maintenance Regime", *Journal of Contemporary China*, 25(102), (September 2016), p.4.] Establishing law and order suits well to the changed strategy. Second, in order for the economic reform to be successful, China had to accelerate economic activities by providing objective procedures and regulations in economic transactions. In addition, in order to facilitate foreign investments, China's legal system had to satisfy the global standard.^[Yuhua Wang, *Tying the Autocrat's Hands: The Rise of the Rule of Law in China*, (Cambridge: Cambridge University Press, 2015); Peerenboom op.cit., pp.430-445.] Last, popular protests are becoming regime threatening because it is mostly against the governments, violent, and growing in frequency and in the number of participants.^[Asian Wall Street Journal, "China's Spiraling Unrest", December 14, 2005.,([http://www.wsj.com/articles/SB113450766490021545](http://www.wsj.com/articles/SB113450766490021545)); Yanqi Tong and Shaohua Lei, *Social Protest in Contemporary China, 2003-2010: Transitional Pains and Regime Legitimacy*, (Abingdon:  Routledge, 2013).] In order to undercut the popular protests, turning them into regularized litigation will be necessary. 
 
 When considering that the first and third reasons directly related to ordering society and the second reason to the legitimacy, it can be inferred that the ultimate reason for the central government to establish law as the criteria for justice is to maintain regime stability.
 
+---
 
-###*Hypotheses*
+##*Hypotheses*
 Because it has been more than 30 years since the Chinese government declared the legal reform, literatures analyzing how successful the legal reform has been compared to its goal - establish law as a social norm - are beginning to be produced. Among them, several existing studies suggested two possible explanations as the reason behind choosing litigation as a conflict resolution method rather than other methods.
 
-First, some studies suggest **a positive relationship between higher economic level and the preference for litigation.** Zhu argues that as the economic activities increase in certain provinces, their residents' need for law also grows, since law plays a role as regulations and standards in economic transactions.^[Jingwen Zhu, *Zhongguo Falvfazhan Baogao* [Report on China's Legal development], (Beijing: Zhongguo Renmendaxue Chubanshe, 2007), p.60.]  Furthermore, Wang suggests that since the sole impetus for the CCP to push forward the rule of law is to invigorate the economy, aside from economic players, other ordinary people cannot reap the benefits of legal reform.^[Yuhua Wang, *Tying the autocrat's Hands: The Rise of the Rule of Law in China*, (Cambridge: Cambridge University Press, 2015).] Michelson and Read also diagnose that in regions with higher household income, people have better perception toward courts and official justice.^[Ethan Michelson and Benjamin L. Read, "Public Attitudes toward Official Justice in Beijing and Rural China", in Margaret Woo and Mary Gallagher, *Chinese Justice: Civil Dispute Resolution in Contemporary China*, (Cambridge: Cambridge University Press, 2007), p.183.]  
+> First, some studies suggest **a positive relationship between higher economic level and the preference for litigation.** Zhu argues that as the economic activities increase in certain provinces, their residents' need for law also grows, since law plays a role as regulations and standards in economic transactions.^[Jingwen Zhu, *Zhongguo Falvfazhan Baogao* [Report on China's Legal development], (Beijing: Zhongguo Renmendaxue Chubanshe, 2007), p.60.]  Furthermore, Wang suggests that since the sole impetus for the CCP to push forward the rule of law is to invigorate the economy, aside from economic players, other ordinary people cannot reap the benefits of legal reform.^[Yuhua Wang, *Tying the autocrat's Hands: The Rise of the Rule of Law in China*, (Cambridge: Cambridge University Press, 2015).] Michelson and Read also diagnose that in regions with higher household income, people have better perception toward courts and official justice.^[Ethan Michelson and Benjamin L. Read, "Public Attitudes toward Official Justice in Beijing and Rural China", in Margaret Woo and Mary Gallagher, *Chinese Justice: Civil Dispute Resolution in Contemporary China*, (Cambridge: Cambridge University Press, 2007), p.183.]  
 
-Second, **higher levels of education also have been suggested as a contributor to increasing frequency of litigation**.^[Zhu, op. cit.] The logic behind such argument is that the more people know about their legal rights through education, the more they would want to settle grievances or solve conflicts through legal methods.
+> Second, **higher levels of education also have been suggested as a contributor to increasing frequency of litigation**.^[Zhu, op. cit.] The logic behind such argument is that the more people know about their legal rights through education, the more they would want to settle grievances or solve conflicts through legal methods.
+
+---

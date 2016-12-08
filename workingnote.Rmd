@@ -1,14 +1,21 @@
 ---
 title: "Working Note"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
+***
+
 #Here I did
-1) data importing
+> 1) data importing
 2) merging two different data set
-3) making a graph
+3) making graphs
 4) visualizing data on a map
-5) inserting footnotes
-6) making links
-7) inserting Shiny apps
+5) trying various markdown functions including footnotes, links, font colors..
+6) inserting Shiny apps
+
+***
 
 #Bibliography
 Cai, Yongshun, 2010, *Collective Resistance in China: Why Popular Protests Succeed or Fail*, Stanford: Stanford University Press.
@@ -58,3 +65,5 @@ Constitution of the People's Republic of China.
 *Zhongguo Shangwang*, “2014 Quanguo Xinfang Xitong Huajielv da 83% Xinfang Jizhi Zhineng reng cun Kunhuo” [The Resolution Rate of 2014 National Xinfang Reached 83%. The function of the Xinfang system is still confused.], Feb 16, 2015.
 
 *Zhongguo Tongji Nianjian* [China Statistical Yearbook], Beijing: Zhongguo Tongji Chubanshe.
+
+---
