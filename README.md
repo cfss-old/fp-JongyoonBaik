@@ -1,5 +1,7 @@
 # Final project
 
+##[link to my webpage](http://https://uc-cfss.github.io/fp-JongyoonBaik/)
+
 ##Here I did
 1) data importing
 2) merging two different data set
@@ -14,6 +16,7 @@
 ###1) **texreg** - to display the results of the statistical analysis
 ###2) **plm** - to run the linear regression model for panel data
 ###3) **mapproj** - to insert the map of China
+###4) **gridExtra**
 
 ##Had a difficulty in rendering site because the files were too large.
 ##Solved this problem by running the commands below through gitbash.
