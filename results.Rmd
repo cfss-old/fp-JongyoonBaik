@@ -8,7 +8,7 @@ output:
 
 ***
 
-##Result Table
+##*Result Table*
 
 ```{r analysis, include=FALSE}
 library(plm)
@@ -40,14 +40,14 @@ According to the results of the third analysis, when population was controlled, 
 
 ***
 
-##Result Explanation
+##*Result Explanation*
 Why is that economic factor affect the choice of litigation, whereas education does not? When it comes to the economic factor, as mentioned in the 'hypotheses'part, it does affect the choice for litigation because with more economic transaction, people need transparent rules and regulations more frequently. In addition, since laws regarding economic exchanges are better established than administrative/civil laws in China, Chinese people would have felt law as an effecient conflict-resolution tool for economic conflicts.
 
 When it comes to the education, although it is appropriate to argue that education lets people to know their legal rights, people tend to choose another conflict resolution method to realize their legal rights - popular protest. Popular protest is at the opposite end of the spectrum to litigation in that it is illegal, mostly violent, and often said to be regime-threatening way of resolving conflict, whereas litigation is legal and procedural, and contributes to social stability. Thus, the level of education cannot explain why litigation is chosen *over* other methods.
 
 ***
 
-##Limitation
+##*Limitation*
 As can be seen from the graphs below, the relations between population and cases, between education and cases are not straightly linear, although the general trends show that the larger the value X is, the more the cases there are. Thus, I am worried if a linear regression model is not the best option for this research.
 ```{r limit, include=FALSE}
 library(ggplot2)

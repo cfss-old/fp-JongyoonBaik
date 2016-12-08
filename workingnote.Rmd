@@ -7,7 +7,7 @@ output:
 ---
 ***
 
-#Here I did
+##*Here I did*
 > 1) data importing
 2) merging two different data set
 3) making graphs
@@ -17,7 +17,7 @@ output:
 
 ***
 
-#Bibliography
+##*Bibliography*
 Cai, Yongshun, 2010, *Collective Resistance in China: Why Popular Protests Succeed or Fail*, Stanford: Stanford University Press.
 
 Chen, Feng and Xin Xu, 2012, "Active Judiciary: Judicial Dismantling of Workers' Collective Action in China", *The China Journal*, no. 67.
