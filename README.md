@@ -11,10 +11,15 @@
 
 
 ##Additional packages installed
-1) texreg - to display the results of the statistical analysis
-2) plm - to run the linear regression model for panel data
-3) mapproj - to insert the map of China
+###1) **texreg** - to display the results of the statistical analysis
+###2) **plm** - to run the linear regression model for panel data
+###3) **mapproj** - to insert the map of China
 
+##Had a difficulty in rendering site because the files were too large.
+##Solved this problem by running the commands below through gitbash.
+###git stage -A
+###git commit -m "Rendered the full site"
+###git push
 
 
 This is the repository for your final project. It is up to you to decide how to structure your files and directories. The final result will be a website created using [R Markdown](http://rmarkdown.rstudio.com/rmarkdown_websites.html).
