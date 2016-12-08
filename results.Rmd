@@ -33,6 +33,7 @@ lm3 <- plm(cases ~ population + GRP + education, data = litigation_china, index 
 htmlreg(l = list(lm1, lm2, lm3), mfrow = TRUE)
 ```
 
+
 Among the three different models, I think the third model is the most appropriate one for the purpose of this project - comparing the effects of the two independent variables. The first and the second models do not have enough information since the effect of either the GRP or the education was absorbed by the effect of the number of population.
 
 According to the results of the third analysis, when population was controlled, both the GRP and the education level appear to have statistically significant impacts on the frequency of litigation, with 99% of the confidence level. With every 100 million yuan increase in GRP, about 8.6 more cases are expected to increase. Yet, when it comes to the education level, the direction is the opposite to the hypothesis: with every 10 student enrollments decrease, about 4 more cases are expected to increase.
