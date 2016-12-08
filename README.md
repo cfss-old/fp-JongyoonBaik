@@ -1,6 +1,6 @@
 # Final project
 
-##[link to my webpage](http://https://uc-cfss.github.io/fp-JongyoonBaik/)
+##[link to my webpage](https://uc-cfss.github.io/fp-JongyoonBaik/)
 
 ***
 
