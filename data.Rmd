@@ -1,15 +1,19 @@
 ---
 title: "Explore Provincial Data"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ***
 
-##Research Method
-In this project, the two hypotheses suggested in the existing studies will be tested by a statistial analysis, with a larger set of data than the existing studies. Statistical analysis complements the existing studies because **it can be used to include the information across the seven different provinces over ten years.** Specifically, in this project, Shanghai, Shandong, Jiangxi, Hubei, and Qinghai's data from 1998 to 2011 will be included, although most of the provinces do not have the complete yearly data. The provinces and years are selected based on the availability of the data on the frequency of litigation, collected from *Law Yearbook of China*. Furthermore, among the provinces that have relevant data available, the five provinces are selected based on their locations, as can be seen from Figure 2. Locations are selected to be evenly distributed across the mainland China in order to prevent dependent variables from being concentrated on certain areas, which would cause bias toward rich/poor or coast/interior regions. **With such information, statistical analysis employed in this paper is expected to maximize the generalizability of the results of this research.**
+##*Research Method*
+In this project, the two hypotheses suggested in the existing studies will be tested by a statistial analysis, with a larger set of data than the existing studies. Statistical analysis complements the existing studies because **it can be used to include the information across the seven different provinces over ten years.** Specifically, in this project, Shanghai, Shandong, Jiangxi, Hubei, and Qinghai's data from 1998 to 2011 will be included, although most of the provinces do not have the complete yearly data. The provinces and years are selected based on the availability of the data on the frequency of litigation, collected from *Law Yearbook of China*. Furthermore, among the provinces that have relevant data available, the five provinces are selected based on their locations, as can be seen from Figure 2. Locations are selected to be evenly distributed across the mainland China in order to prevent dependent variables from being concentrated on certain areas, which would cause bias toward rich/poor or coast/interior regions. With such information, statistical analysis employed in this paper is expected to maximize the generalizability of the results of this research.
 
 In addition, with statistical analysis, **the effect of the economic factor and the education factor will be compared**. By doing so, we can figure out which hypothesis is more persuasive.
 
-Since the data is consisted of province/year observation, **linear regression models for panel data** will be used.
+Since the data is consisted of province/year observation, <span style="color:blue">linear regression models for panel data</span> will be used.
 
 ```{r, include = FALSE}
 library(shiny)
@@ -22,9 +26,50 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ***
 
-###**The interactive section below lets you explore the dataset for each province.**
+##*Variable comparisons across provinces*
+
 Aside from the dependent variable, three other variables are included in the statistical analysis. First, regarding the independent variables, the economic factor was measured by the gross regional product, and the education level was measured by the number of students graduated from higher education institutions, following the indicators used by the existing studies. 
 Second, population will be controlled because the population gap among different provinces are so huge that the level of litigation can be influenced by it. That is, in a province with a bigger population, interactions among those people may be more frequent than in a province with a smaller population, possibly making the level of litigation higher. All of the data mentioned here are available from *China Statistical Yearbook*.
+
+```{r comparison, include=FALSE}
+library(ggplot2)
+library(readr)
+
+litigation_china <- read_csv("data.csv")
+
+case <- ggplot(data = litigation_china) +
+  geom_point(mapping = aes(x = year, y = cases), color = "#990000") +
+  ggtitle("<N of cases comparison>") +
+  facet_wrap(~ province, nrow = 2)
+
+GRP <- ggplot(data = litigation_china) +
+  geom_point(mapping = aes(x = year, y = GRP), color = "#000066") +
+  ggtitle("<GRP comparison>") +
+  facet_wrap(~ province, nrow = 2)
+
+education <- ggplot(data = litigation_china) +
+  geom_point(mapping = aes(x = year, y = education), color = "#CC9900") +
+  ggtitle("<Level of education comparison>") +
+  scale_y_continuous(labels = scales::comma) +
+  facet_wrap(~ province, nrow = 2)
+
+population <- ggplot(data = litigation_china) +
+  geom_point(mapping = aes(x = year, y = population), color = "#333333") +
+  ggtitle("<Population comparison>") +
+  facet_wrap(~ province, nrow = 2)
+
+```
+
+```{r compareresults, include=TRUE}
+case
+GRP
+education
+population
+```
+
+***
+
+##**The interactive section below lets you explore the dataset for each province.**
 
 ```{r}
 knitr::include_app("https://jongyoonbaik.shinyapps.io/hw10/", height = 700)

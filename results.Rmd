@@ -22,11 +22,11 @@ litigation_china <- read_csv("data.csv") %>%
 location_china <- read_csv("location.csv") %>%
   tbl_df()
 
-lm1 <- plm(cases ~  GRP + population, data = litigation_china, index = c('province', 'year'), model = "within")
+lm1 <- plm(cases ~  population + GRP, data = litigation_china, index = c('province', 'year'), model = "within")
 
-lm2 <- plm(cases ~ education + population, data = litigation_china, index = c('province', 'year'), model = "within")
+lm2 <- plm(cases ~ population + education, data = litigation_china, index = c('province', 'year'), model = "within")
 
-lm3 <- plm(cases ~ GRP + education + population, data = litigation_china, index = c('province', 'year'), model = "within")
+lm3 <- plm(cases ~ population + GRP + education, data = litigation_china, index = c('province', 'year'), model = "within")
 ```
 
 ```{r results, echo=FALSE, results='asis'}
